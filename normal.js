@@ -94,6 +94,7 @@
         dom.append('div').text(lbl);
         return dom.append('input')
             .attr('class', cls)
+            .attr('style','max-width:130px')
             .attr('type', 'range')
             .attr('min', min)
             .attr('max', max)
