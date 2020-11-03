@@ -26,7 +26,7 @@
 </head>
 
 <body>
-  <div class="container-xl">
+  <div class="container-fluid" style="margin-top: 10%;">
 <div class="justify-content-md-center row">
   <div id="roc"></div>
   <div >
@@ -35,8 +35,14 @@
 </div> 
 </div>
   <script>
-    roc.init("roc", 400, 300, 70);
-    normal.init("normal", [-5, 5], 400, 300, 70);
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      roc.init("roc", 400, 300, 70);
+      normal.init("normal", [-5, 5], 400, 300, 70);
+     }else{
+       roc.init("roc", 400, 300, 70);
+       normal.init("normal", [-5, 5], 400, 300, 70);
+
+     }
   </script>
 </body>
 
