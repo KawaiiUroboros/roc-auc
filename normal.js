@@ -100,7 +100,7 @@
             .attr('max', max)
             .attr('step', (max - min) / num_steps)
             .attr('value', default_value)
-            .on('change', function() {
+            .on('input', function() {
                 switch (this.className) {
                 case 'sick-mean':
                     s_mean = this.value;
