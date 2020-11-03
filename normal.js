@@ -1,4 +1,3 @@
-/* Copyright 2016 Gagarine Yaikhom (MIT License) */
 (function() {
     var container, svg, xlim, x, y,
     s_mean = 0, s_stddev = 1, /* sick */
@@ -9,11 +8,6 @@
 
     if (typeof normal === 'undefined')
         normal = {};
-
-    /* Uses Abramowitz and Stengun approximation
-       Handbook of Mathematical Functions,
-       Section 26.2.17, pp. 932
-       National Bureau of Standards, June 1964 */
     function pnorm_lower(mean, stddev, x) {
         var i, reverse = false, t, sum, tm, prob, z_score,
         coeffs = [

@@ -19,13 +19,13 @@ svg text {
 
 #sick {
     width: 1;
-    fill: #e30d1183;
+    fill: #ffc803bd;
     stroke: #141414;
 }
 
 #healthy {
     width: 1;
-    fill: #ffc8037e;
+    fill: #91b5f7d3;
     stroke: #141414;
 }
 
@@ -51,14 +51,14 @@ div.healthy {
 }
 
 div.sick .title {
-    color: #e30d12;
+    color: #e49502;
     padding: 0px;
     padding-bottom: 20px 'Bebas Neue', cursive;
     display: block;
 }
 
 div.healthy .title {
-    color: #ff9100;
+    color: #789fe9;
     padding: 0px;
     display: block;
 }
