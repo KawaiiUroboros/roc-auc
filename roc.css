@@ -25,11 +25,17 @@ svg text {
 
 #healthy {
     width: 1;
-    fill: #ffc803bd;
+    /* fill: #ffc803bd; */
+    fill: #ffd803;
+    opacity: .7;
     stroke: #ff9a03bd;
 }
 
-#container {
+/* .cont-grid{
+    display: grid
+} */
+
+/* #container {
     display: inline-block;
 }
 
@@ -38,7 +44,7 @@ svg text {
     width: 600px;
     margin-left: auto;
     margin-right: auto;
-}
+} */
 
 div.sick,
 div.healthy {
@@ -123,13 +129,13 @@ div.healthy div {
     letter-spacing: 1px;
     fill: #4c6aa1;
 }
-
+/* 
 #roc,
 #normal {
     display: inline-block;
     float: left;
     clear: both;
-}
+} */
 
 #roc svg,
 #normal svg {

@@ -1,6 +1,6 @@
 /* Copyright 2016 Gagarine Yaikhom (MIT License) */
 (function() {
-    var container, svg, x, y, line;
+    var container, svg, x, y, line, height2;
 
     if (typeof roc === 'undefined')
         roc = {};
@@ -29,6 +29,7 @@
         .attr('y1', height)
         .attr('x2', width)
         .attr('y2', 0);
+        height2 = height;
     }
 
     roc.point = function(tpr, fpr) {
@@ -44,38 +45,69 @@
         }
         point.attr('cx', x(fpr))
             .attr('cy', y(tpr));
-        coord.text('(' + fpr.toPrecision(2) + ', '
-                   + tpr.toPrecision(2) + ')')
+        coord.text('(' + fpr.toFixed(2) + ', '
+                   + tpr.toFixed(2) + ')')
             .attr("transform", 'translate(' +
                   (x(fpr) + displacement) + ','
                   + (y(tpr) - displacement) + ')');
     }
 
-    roc.path = function(data) {
+    roc.path = function(data, height) {
         var path =  svg.select('.roc-path');
         if (path.empty())
             path = svg.append('path')
             .datum(data)
             .attr('class', 'roc-path')
-            .attr('d', line);
+            .style('fill', '#ffd803')
+            .style('opacity', 0.5)
+            // .style('transform', 'translate(0px, 10px)')
+            // .style('transform', 'rotate(37deg) translate(100px, 0px)')
+            .attr('d', areaUnderCurve(data));
         else
             path.datum(data)
-            .attr('d', line);
+            // .style('fill', 'lightgrey')
+            .style('opacity', 0.5)
+            // .style('transform', 'translate(0px, 10px)')
+            // .style('transform', 'rotate(37deg)')
+            .attr('d', areaUnderCurve(data));
     }
+
+    function areaUnderCurve(data) {
+        var areaGenerator = d3.svg.area()
+          .x(function(d) { return x(d.x); })
+          .y0(height2)
+          .y1(function(d) { return y(d.y); });
+    
+        return areaGenerator(data);
+    }
+    // function drawArea(data, tpr, fill) {
+    //     svg.append("path")
+    //       .attr("class", "area")
+    //       .attr("id", tpr + "Area")
+    //       .style({
+    //         "fill": fill,
+    //         "opacity": 0
+    //       })
+    //       .attr("d", areaUnderCurve(data, tpr))
+    //   }
 
     roc.init = function(id, width, height, margin) {
         container = d3.select('#' + id);
         x = d3.scale.linear().domain([0, 1]).range([0, width]),
         y = d3.scale.linear().domain([0, 1]).range([height, 0]);
-        line = d3.svg.line()
+        line = 
+            d3.svg.line()
             .x(function(d) { return x(d.x); })
             .y(function(d) { return y(d.y); });
-        svg = container.append('svg')
+            // .x(function(d) { return x(d.date); })
+            // .y0(height)
+            // .y1(function(d) { return y(d.close); });
+            svg = container.append('svg')
             .attr('width', width + 2 * margin)
             .attr('height', height + 2 * margin)
             .append('g')
             .attr('transform', 'translate(' + margin
-                  + ',' + margin + ')');
-        axes(width, height, margin);
-    }
+                + ',' + margin + ')');
+            axes(width, height, margin);
+        }
 })();

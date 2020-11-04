@@ -80,7 +80,8 @@
             .datum(data)
             .attr('id', id)
             .attr('class', 'line')
-            .attr('d', line);
+            // .style('stroke', 'red')
+            .attr('d', line)
     }
 
     function add_slider(dom, lbl, cls, min, max,
