@@ -13,20 +13,20 @@ svg text {
 
 .line {
     fill: none;
-    stroke:#91B4F7;
+    stroke: #000;
     stroke-width: 1.5px;
 }
 
 #sick {
     width: 1;
-    fill: #ffc803bd;
-    stroke: #141414;
+    fill: #377dffd3;
+    stroke: #3d4572d3;
 }
 
 #healthy {
     width: 1;
-    fill: #91b5f7d3;
-    stroke: #141414;
+    fill: #ffc803bd;
+    stroke: #ff9a03bd;
 }
 
 #container {
@@ -51,14 +51,14 @@ div.healthy {
 }
 
 div.sick .title {
-    color: #e49502;
+    color: #377dffd3;
     padding: 0px;
     padding-bottom: 20px 'Bebas Neue', cursive;
     display: block;
 }
 
 div.healthy .title {
-    color: #789fe9;
+    color: #ff9a03bd;
     padding: 0px;
     display: block;
 }
@@ -88,30 +88,30 @@ div.healthy div {
 }
 
 #roc .roc-path {
-    stroke: #09f;
+    stroke: #000;
     stroke-width: 2;
     fill: none;
 }
 
 #roc .roc-point-coord {
-    fill: #09f;
+    fill: #000;
     font-size: 13px;
 }
 
 #roc .roc-point {
-    stroke: #09f;
+    stroke: red;
     stroke-width: 2;
-    fill: #fff;
+    fill: red;
 }
 
 #normal .normal-threshold {
-    stroke: #91B4F7;
+    stroke: #000;
     shape-rendering: crispEdges;
     stroke-width: 1.2;
 }
 
 #normal .normal-threshold-prob {
-    fill: #4c6aa1;
+    fill: #000;
     text-anchor: middle;
     font-size: 13px;
 }
@@ -151,7 +151,7 @@ div.healthy div {
 }
 
 #normal::before {
-    content: "Normal Distribution of Groups";
+    content: "Распределение классов";
     position: relative;
     float: left;
     font-size: larger;
