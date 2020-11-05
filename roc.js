@@ -18,7 +18,7 @@
             .text("False Positive Probability");
             svg.append("text")
             .attr('class', 'x-label2')
-            .attr("transform", "translate(" + (width/2 + 3*two_third)
+            .attr("transform", "translate(" + (width/2 + 3.3*two_third)
                   + "," + (height - two_third/2) + ")")
             .text("False Positive Probability");
       
