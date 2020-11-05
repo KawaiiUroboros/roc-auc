@@ -87,12 +87,18 @@ div.healthy div {
     stroke-width: 1.2;
     stroke-dasharray: 3,3;
 }
+
 #roc .x-label,
 #roc .y-label {
     text-anchor: middle;
     font-size: 14px;
 }
-
+#roc .x-label2 {
+    text-anchor: middle;
+    font-size: 14px;
+    z-index: 10;
+    opacity: 1;
+}
 #roc .roc-path {
     stroke: #000;
     stroke-width: 2;

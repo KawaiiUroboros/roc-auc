@@ -123,9 +123,9 @@
         // add_slider(s, "Mean", "sick-mean",
         //            xlim[0], 0, num_steps, s_mean);
         add_slider(s, "Mean", "sick-mean",
-                   '-2', 0, num_steps, s_mean);
+                   '-3', 2, num_steps, s_mean);
         add_slider(s, "SD", "sick-stddev",
-                   0.5, 1, num_steps, s_stddev);
+                   0.5, 2, num_steps, s_stddev);
         h_mean = 1;
         health_stddev = 1;
         h = d.append('div').attr('class', 'healthy');
@@ -133,9 +133,9 @@
         // add_slider(h, "Mean", "healthy-mean",
         //            0, xlim[1], num_steps, h_mean);
         add_slider(h, "Mean", "healthy-mean",
-                   0, 2, num_steps, h_mean);
+                   0, 4, num_steps, h_mean);
         add_slider(h, "SD", "healthy-stddev",
-                   0.5, 1, num_steps, h_stddev);
+                   0.5, 2, num_steps, h_stddev);
         normal.refresh();
     }
 
@@ -185,8 +185,8 @@
                 .attr('x2', cx);
             svg.select('.normal-threshold-prob')
                 .attr('x', cx)
-                .text('(' + tpr.toPrecision(2) + ', '
-                      + fpr.toPrecision(2) + ')');
+                .text('(' + fpr.toFixed(2) + ', '
+                      + tpr.toFixed(2) + ')');
             svg.select('.normal-threshold-label')
                 .attr('transform', 'translate('
                       + (cx + 12) + ',' + (height / 3)

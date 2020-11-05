@@ -6,7 +6,7 @@
         roc = {};
 
     function axes(width, height, margin) {
-        var two_third = margin * 2 / 3;
+         two_third = margin * 2 / 3;
         svg.append('g')
             .attr('class', 'x axis')
             .attr('transform', 'translate(0,' + height + ')')
@@ -16,6 +16,12 @@
             .attr("transform", "translate(" + (width/2)
                   + "," + (height + two_third) + ")")
             .text("False Positive Probability");
+            svg.append("text")
+            .attr('class', 'x-label2')
+            .attr("transform", "translate(" + (width/2 + 3*two_third)
+                  + "," + (height - two_third/2) + ")")
+            .text("False Positive Probability");
+      
         svg.append('g')
             .attr('class', 'y axis')
             .call(d3.svg.axis().scale(y).orient('left'));
@@ -30,6 +36,7 @@
         .attr('x2', width)
         .attr('y2', 0);
         height2 = height;
+       widthh = width
     }
 
     roc.point = function(tpr, fpr) {
@@ -51,8 +58,11 @@
                   (x(fpr) + displacement) + ','
                   + (y(tpr) - displacement) + ')');
     }
-
+   
     roc.path = function(data, height) {
+       let glArea = calculateArea(data); 
+       svg.select('.x-label2')
+       .text("AUC = "+glArea.toFixed(2));
         var path =  svg.select('.roc-path');
         if (path.empty())
             path = svg.append('path')
@@ -63,6 +73,7 @@
             // .style('transform', 'translate(0px, 10px)')
             // .style('transform', 'rotate(37deg) translate(100px, 0px)')
             .attr('d', areaUnderCurve(data));
+        
         else
             path.datum(data)
             // .style('fill', 'lightgrey')
@@ -70,8 +81,25 @@
             // .style('transform', 'translate(0px, 10px)')
             // .style('transform', 'rotate(37deg)')
             .attr('d', areaUnderCurve(data));
+            
     }
-
+      // numerical integration
+  function calculateArea(points) {
+    var area = 0.0;
+    var length = points.length;
+    if (length <= 2) {
+      return area;
+    }
+    points.forEach(function(d, i) {
+      var x = 0,
+          y = 1;
+      if('undefined' !== typeof points[i-1]){
+        area += (points[i].x - points[i-1].x) * (points[i-1].y+ points[i].y) / 2;
+      }
+      
+    });
+    return Math.abs(area);
+  }
     function areaUnderCurve(data) {
         var areaGenerator = d3.svg.area()
           .x(function(d) { return x(d.x); })
