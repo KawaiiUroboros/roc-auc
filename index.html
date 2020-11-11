@@ -38,6 +38,7 @@
     <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="roc.js" charset="utf-8"></script>
     <script src="normal.js" charset="utf-8"></script>
+    <script src="size.js" charset="utf-8"></script>
     <link rel="stylesheet" href="roc.css" />
   </head>
 
@@ -48,6 +49,9 @@
           <div class="row">
             <div class="column" id="normal"></div>
             <div class="column" id="roc"></div>
+          </div>
+          <div class="row">
+            <div class="column" id="size"></div>
           </div>
         </div>
       <!-- </div> -->
@@ -60,9 +64,11 @@
       ) {
         roc.init("roc", 400, 300, 70);
         normal.init("normal", [-5, 5], 400, 300, 70);
+        size.init("size", 400, 300, 70);
       } else {
         roc.init("roc", 400, 300, 70);
         normal.init("normal", [-8.3, 8.3], 400, 300, 70);
+        size.init("size", 400, 300, 70);
       }
     </script>
   </body>

@@ -1,34 +1,33 @@
-
 svg text {
-    fill: #333;
-    font: 12px 'Itim';
+  fill: #333;
+  font: 12px "Itim";
 }
 
 .axis path,
 .axis line {
-    fill: none;
-    stroke: #000;
-    shape-rendering: crispEdges;
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
 }
 
 .line {
-    fill: none;
-    stroke: #000;
-    stroke-width: 1.5px;
+  fill: none;
+  stroke: #000;
+  stroke-width: 1.5px;
 }
 
 #sick {
-    width: 1;
-    fill: #377dffd3;
-    stroke: #3d4572d3;
+  width: 1;
+  fill: #377dffd3;
+  stroke: #3d4572d3;
 }
 
 #healthy {
-    width: 1;
-    /* fill: #ffc803bd; */
-    fill: #ffd803;
-    opacity: .7;
-    stroke: #ff9a03bd;
+  width: 1;
+  /* fill: #ffc803bd; */
+  fill: #ffd803;
+  opacity: 0.7;
+  stroke: #ff9a03bd;
 }
 
 /* .cont-grid{
@@ -48,92 +47,92 @@ svg text {
 
 div.sick,
 div.healthy {
-    padding: 10px;
-    width: 240px;
-    position: relative;
-    float: left;
-    font: 20px 'Bebas Neue', cursive;
-    color: #555;
+  padding: 10px;
+  width: 240px;
+  position: relative;
+  float: left;
+  font: 20px "Bebas Neue", cursive;
+  color: #555;
 }
 
 div.sick .title {
-    color: #377dffd3;
-    padding: 0px;
-    padding-bottom: 20px 'Bebas Neue', cursive;
-    display: block;
+  color: #377dffd3;
+  padding: 0px;
+  padding-bottom: 20px "Bebas Neue", cursive;
+  display: block;
 }
 
 div.healthy .title {
-    color: #ff9a03bd;
-    padding: 0px;
-    display: block;
+  color: #ff9a03bd;
+  padding: 0px;
+  display: block;
 }
 
 div.sick *,
 div.healthy * {
-    float: left;
+  float: left;
 }
 
 div.sick div,
 div.healthy div {
-    clear: both;
-    width: 40px;
-    text-align: right;
-    margin-right: 10px;
+  clear: both;
+  width: 40px;
+  text-align: right;
+  margin-right: 10px;
 }
 
 #roc .diagonal {
-    stroke: #888;
-    stroke-width: 1.2;
-    stroke-dasharray: 3,3;
+  stroke: #888;
+  stroke-width: 1.2;
+  stroke-dasharray: 3, 3;
 }
 
 #roc .x-label,
 #roc .y-label {
-    text-anchor: middle;
-    font-size: 14px;
+  text-anchor: middle;
+  font-size: 14px;
 }
 #roc .x-label2 {
-    text-anchor: middle;
-    font-size: 14px;
-    z-index: 10;
-    opacity: 1;
+  text-anchor: middle;
+  font-size: 14px;
+  z-index: 10;
+  opacity: 1;
 }
 #roc .roc-path {
-    stroke: #000;
-    stroke-width: 2;
-    fill: none;
+  stroke: #000;
+  stroke-width: 2;
+  fill: none;
 }
 
 #roc .roc-point-coord {
-    fill: #000;
-    font-size: 13px;
+  fill: #000;
+  font-size: 13px;
 }
 
 #roc .roc-point {
-    stroke: red;
-    stroke-width: 2;
-    fill: red;
+  stroke: red;
+  stroke-width: 2;
+  fill: red;
 }
 
 #normal .normal-threshold {
-    stroke: #000;
-    shape-rendering: crispEdges;
-    stroke-width: 1.2;
+  stroke: #000;
+  shape-rendering: crispEdges;
+  stroke-width: 1.2;
 }
 
 #normal .normal-threshold-prob {
-    fill: #000;
-    text-anchor: middle;
-    font-size: 13px;
+  fill: #000;
+  text-anchor: middle;
+  font-size: 13px;
 }
 
 #normal .normal-threshold-label {
-    text-anchor: middle;
-    font-size: 14px;
-    font-variant: small-caps;
-    letter-spacing: 1px;
-    fill: #4c6aa1;
+  text-anchor: middle;
+  font-size: 14px;
+  font-variant: small-caps;
+  letter-spacing: 1px;
+  fill: #4c6aa1;
 }
 /* 
 #roc,
@@ -143,38 +142,44 @@ div.healthy div {
     clear: both;
 } */
 
+#roc,
+#normal,
+#size {
+  border: 1px dashed lightgreen;
+}
+
 #roc svg,
 #normal svg {
-    display: inline-block;
-    float: left;
-    clear: both;
+  display: inline-block;
+  float: left;
+  clear: both;
 }
 
 #roc::before {
-    content: "Receiver Operating Characteristic (ROC) Curve";
-    position: relative;
-    font-size: larger;
-    float: left;
-    width: 100%;
-    text-align: center;
-    font-family: 'Bebas Neue', cursive;
-    margin-top: 30px;
-    margin-bottom: -30px
+  content: "Receiver Operating Characteristic (ROC) Curve";
+  position: relative;
+  font-size: larger;
+  float: left;
+  width: 100%;
+  text-align: center;
+  font-family: "Bebas Neue", cursive;
+  margin-top: 30px;
+  margin-bottom: -30px;
 }
 
 #normal::before {
-    content: "Распределение классов";
-    position: relative;
-    float: left;
-    font-size: larger;
-    width: 100%;
-    text-align: center;
-    font-family: 'Bebas Neue', cursive;
-    margin-top: 30px;
-    margin-bottom: -30px
+  content: "Распределение классов";
+  position: relative;
+  float: left;
+  font-size: larger;
+  width: 100%;
+  text-align: center;
+  font-family: "Bebas Neue", cursive;
+  margin-top: 30px;
+  margin-bottom: -30px;
 }
 
 #normal > div {
-    margin-top: -30px;
-    position: relative;
+  margin-top: -30px;
+  position: relative;
 }
