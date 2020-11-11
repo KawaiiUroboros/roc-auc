@@ -142,12 +142,6 @@ div.healthy div {
     clear: both;
 } */
 
-#roc,
-#normal,
-#size {
-  border: 1px dashed lightgreen;
-}
-
 #roc svg,
 #normal svg {
   display: inline-block;
